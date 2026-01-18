@@ -7,6 +7,12 @@ load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
+# Проверка, что токен загрузился
+if TOKEN is None:
+    print("Ошибка: переменная BOT_TOKEN не найдена в .env")
+else:
+    print("Токен успешно загружен")
+
 user_data = {}
 
 # /start
